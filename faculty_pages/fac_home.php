@@ -210,7 +210,7 @@ font-size:25px;
     </div>
     <div class="navbar" id="myTopnav">
     <a class="active" href="fac_module.php"><i class="fa fa-file-text" aria-hidden="true"></i> Module</a>
-        <a href="fac_home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>      
+        <a href="fac_teaching_home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>      
         <a href="manageuser.php"><i class="fa fa-users" aria-hidden="true"></i> Manage User</a> 
         <a href="add_quiz.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Quiz</a>
 
