@@ -89,7 +89,7 @@ font-size:25px;
   padding: 15px 20px;
   cursor: pointer; /* Pointer/hand icon */
   /* float: left;  */
-  margin-left: 5px;
+/*  margin-left: 5px;*/
   width: 300px;
   font-size: 16px;
   border-radius:12px;
@@ -119,7 +119,13 @@ font-size:25px;
   width: 300px;
   height: 200px;
   /* perspective: 1000px; */
-  margin-left: 70px;
+}
+
+.btn-group {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  /* perspective: 1000px; */
 }
 
 .flip-card-inner {
@@ -172,7 +178,7 @@ font-size:25px;
 }
 .column {
   float: left;
-  width: 33.33%;
+  width: 25%;
   padding: 5px;
 }
 
@@ -322,6 +328,27 @@ li{
       </div>
       </div>
 </div>
+
+<div class="column">
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="feedback_module.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h2>CLASSROOM MODULE</h2> 
+      <p>You can initiate lectures, view discussion forum and maintain attendance with this module.</p>
+      <p>Click on Classroom module button below to explore all options of Classroom module.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="btn-group">
+        <button onclick="location.href = 'fac_classroom_page.php';">CLASSROOM MODULE</button>
+      </div>
+      </div>
+</div>
+
 <div class="column">
   <div class="flip-card">
     <div class="flip-card-inner">

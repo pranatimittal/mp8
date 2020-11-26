@@ -184,10 +184,8 @@ font-size:25px;
   
   <div class="navbar">
     <a href="fac_module.php"><i class="fa fa-file-text" aria-hidden="true"></i> Module</a>
-    <a href="fac_teaching_home.php"><i class="fa fa-user  fa-home"></i> Home</a>      
-    <a href="fac_upload.php"><i class="fa fa-upload" aria-hidden="true"></i> Upload </a> 
-    <a href="view_uploaded_ass_by_fac.php"><i class="fa fa-eye" aria-hidden="true"></i> Manage Uploads</a>
-    <a href="fac_home.php"><i class="fa fa-files-o" aria-hidden="true"></i> Test module</a>
+    <a href="fac_resources.php"><i class="fa fa-user  fa-home"></i> Home</a><a href="fac_upload.php"><i class="fa fa-upload" aria-hidden="true"></i> Upload Learning Resources </a> 
+    <a href="view_uploaded_ass_by_fac.php"><i class="fa fa-eye" aria-hidden="true"></i> Manage Uploaded Resources</a>
   </div>
 
   <div class="text"><h2> Upload Learning materials    <i class="fa fa-upload fa-1x"></i> </h2></div>

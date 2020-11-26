@@ -159,9 +159,9 @@ font-size:25px;
   
   <div class="navbar">
     <a href="module_page.php"><i class="fa fa-file-text" aria-hidden="true"></i> Module</a>
-    <a href="learning_homepage.php"><i class="fa fa-user  fa-home"></i> Home</a>      
-    <a href="download_resources.php"><i class="fa fa-download" aria-hidden="true"></i> Download learning material</a> 
-    <a href="stu_home.php"><i class="fa fa-files-o" aria-hidden="true"></i> Test module</a>
+    <a href="module_page.php"><i class="fa fa-user  fa-home"></i> Home</a>      
+    <a href="student_assignments_page.php"><i class="fa fa-download" aria-hidden="true"></i>Assignments</a> 
+    <a href="student_quiz_page.php"><i class="fa fa-files-o" aria-hidden="true"></i>Tests and Quizzes</a>
     
   </div>
 
@@ -169,7 +169,7 @@ font-size:25px;
       <h1>LEARNING AND TEST MODULE</h1>
         <div class = "adminpanel">
           <h2>Welcome to Student Panel</h2>
-          <p>You can download learning materials such as assignments , ppts , notes , submit assignments and take test from here....</p>
+          <p>You can take quizzes and tests and view the results</p>
         </div>
       </div>
 
