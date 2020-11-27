@@ -249,29 +249,30 @@ function myFunction() {
 <div class = "manageuser">
   <table align="center">
   <tr>
-    <th>SNo.</th>
+    <th>ID</th>
     <th>Name</th>
     <th>Rollno.</th>
     <th>Email</th>
     <th>Mobile No.</th>
+    <th>Attendance</th>
     <th>Manage User</th>
   </tr>
   
 <?php
 
   $result = mysqli_query($con,"SELECT * FROM login_student") or die('Error');
-$c=1;
 
 while($row = mysqli_fetch_array($result)) {
+  $id = $row['stu_id'];
   $name = $row['name'];
   $mob = $row['mob'];
   $rn = $row['rollno'];
+  $att = $row['atten'];
   $email = $row['email'];
  
-  echo '<tr><td>'.$c++.'</td><td>'.$name.'</td><td>'.$rn.'</td><td>'.$email.'</td><td>'.$mob.'</td>
+  echo '<tr><td>'.$id.'</td><td>'.$name.'</td><td>'.$rn.'</td><td>'.$email.'</td><td>'.$mob.'</td><td>'.$att.'</td>
   <td><a title="Delete User" href="deluser.php?demail='.$email.' "><i>Delete User</i></a></td></tr>';
 }
-$c=0;
 echo '</table></div>';
 
 
