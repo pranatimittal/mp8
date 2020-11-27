@@ -10,10 +10,10 @@ include('config.php');
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
 document.onkeydown = function(e) {
-        if (e.ctrlKey && 
-            (e.keyCode === 67 || 
-             e.keyCode === 86 || 
-             e.keyCode === 85 || 
+        if (e.ctrlKey &&
+            (e.keyCode === 67 ||
+             e.keyCode === 86 ||
+             e.keyCode === 85 ||
              e.keyCode === 117)) {
             return false;
         } else {
@@ -100,9 +100,9 @@ a {
   text-align: center;
 }
 .container img{
- float:right; 
+ float:right;
  width:120px;
- height: 100px; 
+ height: 100px;
 }
 @media (max-width: 576px) {
   * {
@@ -114,9 +114,9 @@ a {
   font-size:22px;
 }
 .container img{
- float:right; 
+ float:right;
  width:100px;
- height: 78px; 
+ height: 78px;
 }
 }
 </style>
@@ -134,10 +134,10 @@ a {
 
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" >
-    
+
     <label for="cno"><b>Contact Number</b></label>
     <input type="text" placeholder="Enter Contact Number" name="cno" >
-    
+
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
@@ -145,10 +145,10 @@ a {
     <input type="password" placeholder="Repeat Password" name="psw_repeat" required>
 
     <label for="image"><b>Your Image</b></label>
-    <input type="file" name="image" id="pic" required><br> 
+    <input type="file" name="image" id="pic" required><br>
 
      <label for="secure"><b>Select your security question</b></label>
-      
+
       <select id="secure" name="security_question" required>
         <option value="">Select</option>
         <option value="What is the name of the author of your favourite book ?">What is the name of the author of your favourite book ?</option>
@@ -156,11 +156,11 @@ a {
         <option value="What is your favorite food?">What is your favorite food?</option>
         <option value="Which is your favorite place?">Which is your favorite place?</option>
      </select>
-      
+
 
     <label for="ans"><b>Your answer</b></label>
     <input type="text" id="ans" name="answer" placeholder="Enter your answer" required>
-    
+
     <label for="reans"><b>Confirm answer</b></label>
     <input type="text" id="reans" name="reanswer" placeholder="Re-enter your answer" required>
 
@@ -169,6 +169,16 @@ a {
 </form>
 
 <?php
+
+        function createURL(){
+            $name=$_POST["name"];
+            $name_clean=preg_replace('/\s*/', '', $name);
+            $name_clean=strtolower($name_clean);
+            $url="https://meet.jit.si/"; 
+            $url .= $name_clean;
+            return $url;
+        }
+
         if(isset($_POST["sub"]))
         {
 
@@ -180,13 +190,14 @@ a {
           $sq=$_POST["security_question"];
           $a1=$_POST["answer"];
           $a2=$_POST["reanswer"];
+          $meet_url=createURL();
 
                 //img start code here
                 $img=basename($_FILES["image"]["name"]);
                 $type=$_FILES["image"]["type"];
                 $size=$_FILES["image"]["size"];
                 $store=$_FILES["image"]["tmp_name"];
-              
+
               //for support, only image code here
                 $n=explode('.',$img);
                 $p=pathinfo("profile_pic/".$img,PATHINFO_EXTENSION);
@@ -194,15 +205,15 @@ a {
                 if(in_array($p,$q))
                 {
                     move_uploaded_file($store,"profile_pic/".$img);
-					
+
                     if($p1 == $p2)
                         {
-							
+
             if($a1==$a2)
                     {
 
-                    $query="INSERT into login_faculty VALUES ('','$name','$e','$m','$p1', '$sq', '$a1', '$img')";
-                     $row=mysqli_query($con, $query);
+                    $query="INSERT into login_faculty VALUES ('','$name','$e','$m','$p1', '$sq', '$a1', '$meet_url', '$img')";
+                    $row=mysqli_query($con, $query);
                     if($row > 0)
                     {
                       echo "<script>alert('Click OK to proceed. ')</script>";
@@ -211,7 +222,7 @@ a {
                    else
                     {
 						echo "<script>alert('Unsuccessful Try again or contact ADMIN. ')</script>";
-					  
+
                     }
                     }
 			else
@@ -224,17 +235,17 @@ a {
 			  else
 				  {
 					 echo "<script>alert('Password doesnot match.  ')</script>";
-					
+
 				  }
-           
-		              
+
+
           }
 		      else
                 {
 					echo "<script>alert('Unsuccessful. ')</script>";
                   echo "<script>alert('Wrong picture format.Picture format must be jpg/png/jpeg.')</script>";
                 }
-         
+
       }
      ?>
 

@@ -1,3 +1,21 @@
+<?php
+include('config.php');
+session_start();
+
+if($_SESSION['xy']=='')
+{
+   echo "<script>window.location.href='faculty_login.php'</script>";
+}
+
+$id=$_SESSION['idf'];
+
+$result=mysqli_query($con,"SELECT meeting_url FROM login_faculty WHERE id='$id'")or die('Error1');
+$meet_url;
+while($row = mysqli_fetch_array($result)) {
+    $meet_url=$row[0];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +24,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-     
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,9 +32,9 @@ body {
   position: relative;
   padding: 20px;
   background: white;
-  color: #21610B;  
+  color: #21610B;
   font-size: 15px;
-  
+
 }
 
 p{
@@ -66,9 +84,9 @@ font-size:25px;
     }
     .content {
   flex: 1 0 auto;
-}  
+}
 @media (max-width: 576px) {
-  
+
   .header{
     font-size:8px;
   }
@@ -111,16 +129,16 @@ font-size:25px;
     <img src="IGDTUW-logo.png" alt="logo" />
     <h1>INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN</h1>
     <p>(Established by Govt. of Delhi vide Act 9 of 2012)</p>
-  </div> 
-  
-  
+  </div>
+
+
   <div class="navbar">
     <a href="fac_module.php"><i class="fa fa-file-text" aria-hidden="true"></i> Module</a>
-    <a href="fac_module.php"><i class="fa fa-user  fa-home"></i> Home</a>      
-    <a href="fac_video_conf.php"><i class="fa fa-upload" aria-hidden="true"></i> Initiate class </a> 
+    <a href="fac_module.php"><i class="fa fa-user  fa-home"></i> Home</a>
+    <a href="<?php echo $meet_url ?>" target="_blank"><i class="fa fa-upload"></i> Initiate class </a>
     <a href="fac_view_attendance.php"><i class="fa fa-eye" aria-hidden="true"></i> View Attendance</a>
     <a href="fac_discussion_forum.php"><i class="fa fa-files-o" aria-hidden="true"></i> Discussion Forum</a>
-    <a href="fac_resources.php"><i class="fa fa-upload" aria-hidden="true"></i> Resources Center </a> 
+    <a href="fac_resources.php"><i class="fa fa-upload" aria-hidden="true"></i> Resources Center </a>
 
   </div>
 
@@ -132,8 +150,8 @@ font-size:25px;
         </div>
       </div>
 
-      </div> 
-    
+      </div>
+
     <?php
 include('../footer.php');
 ?>
