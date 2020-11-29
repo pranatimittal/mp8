@@ -436,7 +436,7 @@ h4{
 <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="feedback_module.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+        <img src="teaching.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
       </div>
       <div class="flip-card-back">
         <h2>CLASSROOM MODULE</h2> 
@@ -460,7 +460,7 @@ h4{
         <img src="learning_section.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
       </div>
       <div class="flip-card-back">
-        <h2>LEARNING MODULE</h2> 
+        <h2>ASSESSMENT MODULE</h2> 
       <p>You can download learning material, ppts, assignments as well as take test with the help of this module.</p>
     <p>Click on learning module button below to explore more about it.</p>  
     </div>
@@ -468,7 +468,7 @@ h4{
   </div>
   <div class="wrapper">
     <div class="btn-group">
-        <button onclick="location.href = 'learning_homepage.php';">LEARNING MODULE</button>
+        <button onclick="location.href = 'learning_homepage.php';">ASSESSMENT MODULE</button>
       </div>
       </div>
     </div>

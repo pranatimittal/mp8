@@ -333,7 +333,7 @@ li{
 <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="feedback_module.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+        <img src="teaching.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
       </div>
       <div class="flip-card-back">
         <h2>CLASSROOM MODULE</h2> 
@@ -353,10 +353,10 @@ li{
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="teaching.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+        <img src="learning_section.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
       </div>
       <div class="flip-card-back">
-        <h2>TEACHING MODULE</h2> 
+        <h2>ASSESSMENT MODULE</h2> 
       <p>You can upload learning material,assignments as well as upload test with the help of this module.</p>
     <p>Click on teaching module button below to explore all options of learning module.</p>  
     </div>
@@ -364,7 +364,7 @@ li{
   </div>
   <div class="wrapper">
     <div class="btn-group">
-        <button onclick="location.href = 'fac_teaching_home.php';">TEACHING MODULE</button>
+        <button onclick="location.href = 'fac_teaching_home.php';">ASSESSMENT MODULE</button>
       </div>
       </div>
     </div>

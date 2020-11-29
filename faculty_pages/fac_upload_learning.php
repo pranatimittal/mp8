@@ -285,8 +285,7 @@ if(isset($_POST["sub"]))
         echo "<script>window.location.href='assign_submit.php'</script>";
       }
       else
-      {
-        
+      { 
         echo "<script>alert('not done')</script>";
       }
   } 
