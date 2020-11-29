@@ -115,7 +115,7 @@ font-size:25px;
   padding: 15px 20px;
   cursor: pointer; /* Pointer/hand icon */
   /* float: left;  */
-  margin-left: 5px;
+  /*margin-left: 5px;*/
   width: 300px;
   font-size: 16px;
   border-radius:12px;
@@ -145,7 +145,7 @@ font-size:25px;
   width: 300px;
   height: 200px;
   /* perspective: 1000px; */
-  margin-left: 70px;
+  /*margin-left: 70px;*/
 }
 
 .flip-card-inner {
@@ -337,6 +337,10 @@ margin-left:20px;
   text-decoration: none;
 }
 
+@media screen and (min-width: 1280px) , screen and (max-width: 1920px) {
+        #yourID{  overflow-x: auto; overflow-y: auto; }                     
+}
+
 .Modal-content {
    padding: 15px; 
   border-radius: 4px;
@@ -359,6 +363,9 @@ h4{
 
 
 </style>
+
+
+
 <link rel = "icon" type = "image/png" href = "IGDTUW-Logo.png">
 <title>Student Module Page</title>
 </head>
