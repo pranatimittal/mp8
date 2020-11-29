@@ -262,7 +262,7 @@ th {
 
 <div class="navbar" id="myTopnav">
         <a class="active" href="classroom_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-        <a href="f_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+        <a href="student_video_conf.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Attend Class</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>

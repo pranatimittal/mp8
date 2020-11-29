@@ -243,35 +243,44 @@ function myFunction() {
 </script>
 <br>
 <div class="main">
-<h1>Admin Panel-Manage User</h1>
+<h1>Attendance Record</h1>
 </div>
  <br>
 <div class = "manageuser">
   <table align="center">
   <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Rollno.</th>
-    <th>Email</th>
-    <th>Mobile No.</th>
+    <th>Program</th>
+    <th>Branch</th>
+    <th>Semester</th>
+    <th>Roll No.</th>
     <th>Attendance</th>
-    <th>Manage User</th>
   </tr>
   
 <?php
 
-  $result = mysqli_query($con,"SELECT * FROM login_student") or die('Error');
+$tId=$_SESSION['idf'];
+
+  $result = mysqli_query($con,"SELECT login_student.program, login_student.branch, login_student.semester, rollno from coursedetails, login_student WHERE login_student.branch = coursedetails.branch AND login_student.program = coursedetails.program AND login_student.semester = coursedetails.semester AND coursedetails.tid='$tId' ORDER BY login_student.branch") or die('Error');
 
 while($row = mysqli_fetch_array($result)) {
-  $id = $row['stu_id'];
-  $name = $row['name'];
-  $mob = $row['mob'];
-  $rn = $row['rollno'];
-  $att = $row['atten'];
-  $email = $row['email'];
+  // $id = $row['stu_id'];
+  // $name = $row['name'];
+  // $mob = $row['mob'];
+  // $rn = $row['rollno'];
+  // $att = $row['atten'];
+  // $email = $row['email'];
  
-  echo '<tr><td>'.$id.'</td><td>'.$name.'</td><td>'.$rn.'</td><td>'.$email.'</td><td>'.$mob.'</td><td>'.$att.'</td>
-  <td><a title="Delete User" href="deluser.php?demail='.$email.' "><i>Delete User</i></a></td></tr>';
+  // echo '<tr><td>'.$id.'</td><td>'.$name.'</td><td>'.$rn.'</td><td>'.$email.'</td><td>'.$mob.'</td><td>'.$att.'</td>
+  // <td><a title="Delete User" href="deluser.php?demail='.$email.' "><i>Delete User</i></a></td></tr>';
+
+$program = $row['program'];
+$branch = $row['branch'];
+$semester = $row['semester'];
+$roll = $row['rollno'];
+$att = 0;
+
+echo '<tr><td>'.$program.'</td><td>'.$branch.'</td><td>'.$semester.'</td><td>'.$roll.'</td><td>'.$att.'</td></tr>';
+
 }
 echo '</table></div>';
 
