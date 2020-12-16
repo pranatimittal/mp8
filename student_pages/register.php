@@ -238,7 +238,7 @@ a {
 					if($i==$j){
 					
 					
-			$query = "insert into login_student values ('', '$name' , '$b' , '$h' , '$c' , '$i', '$e', '$d', '$f' , '$g' , '$img', '', '')";
+			$query = "insert into login_student values ('', '$name' , '$b' , '$h' , '$c' , '$i', '$e', '$d', '$f' , '$g' , '$img', '', '','0')";
 			$roww=mysqli_query($con, $query);
 			if($roww > 0)
 			{
