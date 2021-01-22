@@ -93,32 +93,6 @@ font-size:25px;
   background-color: #4CAF50;
 }
 
-/*.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: rgba(165, 161, 161, 0.397);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}*/
-
 
 .main h1{
     font-family: "Times New Roman", Georgia, Serif;
@@ -211,7 +185,7 @@ font-size:25px;
     <div class="navbar" id="myTopnav">
     <a class="active" href="fac_module.php"><i class="fa fa-file-text" aria-hidden="true"></i> Module</a>
         <a href="fac_home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-        <a href="fac_teaching_home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>      
+        <a href="fac_teaching_home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
         <a href="manageuser.php"><i class="fa fa-users" aria-hidden="true"></i> Manage User</a>
         <a href="add_quiz.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Quiz</a>
 

@@ -38,6 +38,8 @@ else
 return true;
 }
 });</script>
+
+
     <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -47,65 +49,99 @@ body {
   padding: 20px;
   background: white;
   color: #21610B;
-  font-size: 15px;}.header p{
+  font-size: 15px;
+
+}
+
+.header p{
 color:black;
 font-size:25px;
-} .header img {
+}
+
+ .header img {
   float: left;
   width: 150px;
   height: 120px;
   background: #555;
   margin-right:15px;
-}.navbar {
+}
+
+.navbar {
   overflow: hidden;
   background-color:#555;
-}.navbar a {
+}
+
+.navbar a {
   float: left;
   font-size: 16px;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}.navbar a:hover, .dropdown:hover .dropbtn {
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
   background-color: #4CAF50;
-}.main h1{
-    font-family: "Times New Roman", Georgia, Serif;    font-size: 30px;
+}
+
+
+
+.main h1{
+    font-family: "Times New Roman", Georgia, Serif;
+
+    font-size: 30px;
     /* color:#5e0c17; */
     color: black;
     text-align: center;
   }
   .right {
     text-align: right;
-    float: right;}.btn-group button {
-  background-color: #4CAF50;   border: 1px solid green; /* Green border */
+    float: right;
+
+}
+
+.btn-group button {
+  background-color: #4CAF50;
+
+  border: 1px solid green; /* Green border */
   color: white; /* White text */
   padding: 15px 20px;
   cursor: pointer; /* Pointer/hand icon */
   /* float: left;  */
-  /* margin-left: 5px; */
+  /margin-left: 5px;/
   width: 300px;
   font-size: 16px;
   border-radius:12px;
-}/* Clear floats (clearfix hack) */
+}
+
+/* Clear floats (clearfix hack) */
 .btn-group:after {
   content: "";
   clear: both;
   display: table;
-}.btn-group button:not(:last-child) {
+}
+
+.btn-group button:not(:last-child) {
   border-right: none; /* Prevent double borders */
-}/* Add a background color on hover */
+}
+
+/* Add a background color on hover */
 .btn-group button:hover {
-  background-color: #3e8e41;}
-/* .wrapper {
+  background-color: #3e8e41;
+
+}
+.wrapper {
     text-align: center;
-} */
+}
 .flip-card {
   background-color: transparent;
   width: 300px;
   height: 200px;
   /* perspective: 1000px; */
-  margin-left: 70px;
-}.flip-card-inner {
+  /margin-left: 70px;/
+}
+
+.flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -113,35 +149,60 @@ font-size:25px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}.flip-card:hover .flip-card-inner {
+}
+
+.flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-}.flip-card-front, .flip-card-back {
+}
+
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   border-radius:10px;
-    -moz-border-radius:10px;}.flip-card-front {
+    -moz-border-radius:10px;
+
+}
+
+.flip-card-front {
   /* background-color: #bbb; */
-  color: black;}.flip-card-back {
+  color: black;
+
+}
+
+.flip-card-back {
   background-color: rgb(211, 207, 207);
   color: black;
   transform: rotateY(180deg);
   text-align: center;
-  padding: 5px 10px;}
+  padding: 5px 10px;
+
+}
 .flip-card-back h2{
     text-align: center;
-}* {
+}
+
+* {
   box-sizing: border-box;
-}.column {
+}
+
+.column {
   float: left;
-  width: 33.33%;
+  width: 25%;
   padding: 5px;
-}/* Clearfix (clear floats) */
-.row::after {  content: "";
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+
+  content: "";
   clear: both;
   display: table;
-}.Modal {
+}
+
+
+.Modal {
   display: block;
   position: fixed;
   left: 0;
@@ -155,18 +216,32 @@ font-size:25px;
   -webkit-transition: 0.5s;
   overflow: auto;
   transition: all 0.3s linear;
-}.Modal-content {
+}
+
+.Modal-content {
   background-color: #fefefe;
    margin: auto;
    padding: 20px;
   border-radius: 4px;
   max-width: 450px;
   height: 450px;
-}.ModalOpen { overflow: hidden; }.is-hidden { display: none; }.is-visuallyHidden { opacity: 0; }/* The Close Button */.Close {
+}
+
+.ModalOpen { overflow: hidden; }
+
+.is-hidden { display: none; }
+
+.is-visuallyHidden { opacity: 0; }
+
+/* The Close Button */
+
+.Close {
   color: #aaaaaa;
   float: right;
   font-size: 16px;
-}.Close:hover, .Close:focus {
+}
+
+.Close:hover, .Close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -174,9 +249,15 @@ font-size:25px;
 .is-blurred {
   filter: blur(2px);
   -webkit-filter: blur(2px);
-}input[type="checkbox"]:required:invalid + label { color: red; }
-  input[type="checkbox"]:required:valid + label { color: green; }  .guide{
-    background-color: #4CAF50;   border: 1px solid green; /* Green border */
+}
+
+input[type="checkbox"]:required:invalid + label { color: red; }
+  input[type="checkbox"]:required:valid + label { color: green; }
+
+  .guide{
+    background-color: #4CAF50;
+
+  border: 1px solid green; /* Green border */
   color: white; /* White text */
   padding: 5px 5px;
   cursor: pointer; /* Pointer/hand icon */
@@ -186,7 +267,9 @@ font-size:25px;
   font-size: 16px;
   }
   .guide:hover {
-  background-color: #3e8e41;}
+  background-color: #3e8e41;
+
+}
 .flip-card-back p{
   font-size:15px;
 }
@@ -202,7 +285,9 @@ img[src="learning_section.png"]{
    margin:auto;
  }
   .column{
-   width:100%; }
+   width:100%;
+
+ }
  .flip-card{
   margin:auto;
   width: 200px;
@@ -243,7 +328,13 @@ margin-left:20px;
   text-align: center;
   padding: 8px 10px;
   text-decoration: none;
-}.Modal-content {
+}
+
+@media screen and (min-width: 1280px) , screen and (max-width: 1920px) {
+        #yourID{  overflow-x: auto; overflow-y: auto; }
+}
+
+.Modal-content {
    padding: 15px;
   border-radius: 4px;
   max-width: 280px;
@@ -261,7 +352,13 @@ h4{
   width: 80px;
   font-size: 12px;
   }
-}</style>
+}
+
+
+</style>
+
+
+
 <link rel = "icon" type = "image/png" href = "IGDTUW-Logo.png">
 <title>Student Module Page</title>
 </head>
@@ -285,7 +382,9 @@ h4{
         <h1>STUDENT MODULES</h1>
         </div>
          <br>
-        <br><div class="row">
+        <br>
+
+<div class="row">
     <div class="column">
 <div class="flip-card">
   <div class="flip-card-inner">
@@ -298,20 +397,19 @@ h4{
       <p>Click on view profile button below to  view all your profile details.</p>
     </div>
   </div>
-  <div class="wrapper">
+</div>
+<div class="wrapper">
     <div class="btn-group">
       <button onclick="location.href = 'profile.php';">VIEW PROFILE</button>
       </div>
       </div>
 </div>
-<br>
-      <br>
-      <br>
-</div><div class="column">
+
+<div class="column">
 <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="feedback_module.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+        <img src="learning_section.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
       </div>
       <div class="flip-card-back">
         <h2>FEEDBACK MODULE</h2>
@@ -319,62 +417,59 @@ h4{
       <p>Click on feedback module button below to explore all options of feedback module.</p>
       </div>
     </div>
-    <div class="wrapper">
+  </div>
+  <div class="wrapper">
     <div class="btn-group">
         <button id="myBtn">FEEDBACK MODULE</button>
       </div>
       </div>
-  </div>
-  <br>
-      <br>
-      <br>
-</div><div class="column">
+</div>
 
-    <div class="column">
-    <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="teaching.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
-          </div>
-          <div class="flip-card-back">
-            <h2>CLASSROOM MODULE</h2>
-          <p>You can attend lectures, access discussion forum and check attendance with this module.</p>
-          <p>Click on Classroom module button below to explore all options of Classroom module.</p>
-          </div>
-        </div>
+<div class="column">
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="feedback_module.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
       </div>
-      <div class="wrapper">
-        <div class="btn-group">
-            <button onclick="location.href = 'classroom_page.php';">CLASSROOM MODULE</button>
-          </div>
-          </div>
+      <div class="flip-card-back">
+        <h2>CLASSROOM MODULE</h2>
+      <p>You can attend lectures, access discussion forum and check attendance with this module.</p>
+      <p>Click on Classroom module button below to explore all options of Classroom module.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="btn-group">
+        <button onclick="location.href = 'classroom_page.php';">CLASSROOM MODULE</button>
+      </div>
+      </div>
+</div>
+
+
+<div class="column">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="learning_section.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h2>ASSESSMENT MODULE</h2>
+      <p>You can download learning material, ppts, assignments as well as take test with the help of this module.</p>
+    <p>Click on learning module button below to explore more about it.</p>
+    </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="btn-group">
+        <button onclick="location.href = 'learning_homepage.php';">ASSESSMENT MODULE</button>
+      </div>
+      </div>
     </div>
 
-
-    <div class="column">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="learning_section.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
-          </div>
-          <div class="flip-card-back">
-            <h2>ASSESSMENT MODULE</h2>
-          <p>You can download learning material, ppts, assignments as well as take test with the help of this module.</p>
-        <p>Click on learning module button below to explore more about it.</p>
-        </div>
-        </div>
-      </div>
-      <div class="wrapper">
-        <div class="btn-group">
-            <button onclick="location.href = 'learning_homepage.php';">ASSESSMENT MODULE</button>
-          </div>
-          </div>
-        </div>
-  <br>
-      <br>
-      <br>
-    </div>    </div>
+    </div>
     </main>
+
+
 <div id="myModal" class="Modal is-hidden is-visuallyHidden">
     <!-- Modal content -->
   <div class="Modal-content">

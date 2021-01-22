@@ -12,6 +12,51 @@ if($_SESSION['xy']=='')
 
 ?>
 
+<?php
+
+    if( $_SERVER['REQUEST_METHOD']=='POST' && isset(
+        $con,
+        $_POST['task'],
+        $_POST['rollno'],
+        $_POST['attend']
+    )){
+
+        ob_clean();
+
+        if( $_POST['task']=='increase' ){
+
+            function increase($con,$r,$a) {
+                $sql='UPDATE `attendance` SET `attendno`=`attendno`+1 WHERE `rollno`=? AND `tid`=?';
+
+                $stmt=$con->prepare($sql);
+                $stmt->bind_param('ss',$r,$_SESSION['idf']);
+                $res=$stmt->execute();
+                $stmt->close();
+                return $res;
+            }
+            $result=increase( $con, $_POST['rollno'],$_POST['attend'] );
+        }
+
+
+        if( $_POST['task']=='decrease' ){
+            function increase($con,$r,$a) {
+                $sql='UPDATE `attendance` SET `attendno`=`attendno`-1 WHERE `rollno`=? AND `tid`=?';
+
+                $stmt=$con->prepare($sql);
+                $stmt->bind_param('ss',$r,$_SESSION['idf']);
+                $res=$stmt->execute();
+                $stmt->close();
+                return $res;
+            }
+            $result=increase( $con, $_POST['rollno'],$_POST['attend'] );
+        }
+        if( $_POST['task']=='add' ){
+            /*etc */
+        }
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +69,7 @@ if($_SESSION['xy']=='')
 /* Style the body */
 .content {
   flex: 1 0 auto;
-}  
+}
 body {
   font-family: Arial;
   /* margin: 0; */
@@ -35,9 +80,9 @@ body {
   position: relative;
   padding: 20px;
   background: white;
-  color: #21610B;  
+  color: #21610B;
   font-size: 15px;
-  
+
 }
 p{
 color:black;
@@ -60,7 +105,7 @@ font-size:25px;
   color:white;
    font-size:30px;
   }
-*/ 
+*/
 
  .main h1{
     font-family: "Times New Roman", Georgia, Serif;
@@ -68,7 +113,7 @@ font-size:25px;
     color:#5e0c17;
     text-align: center;
   }
-  
+
     .navbar {
   overflow: hidden;
   background-color:#555;
@@ -88,51 +133,14 @@ font-size:25px;
   overflow: hidden;
 }
 
-/*.dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}*/
-
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: #4CAF50;
 }
 
-/*.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: rgba(165, 161, 161, 0.397);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}*/
-
 .manageuser{
 			font-family: "Times New Roman", Times, serif;
       font-size: 20px;
-      
+
 		}
     table {
   font-family: arial, sans-serif;
@@ -160,7 +168,7 @@ th {
   display: none;
 }
 @media (max-width: 576px) {
-  
+
   .header{
     font-size:8px;
   }
@@ -220,12 +228,12 @@ th {
   <img src="IGDTUW-logo.png" alt="logo" />
   <h1>INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN</h1>
   <p>(Established by Govt. of Delhi vide Act 9 of 2012)</p>
-</div>    
+</div>
 
 <div class="navbar" id="myTopnav">
-        <a class="active" href="fac_classroom_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>      
-        <a href="fac_view_attendance.php"><i class="fa fa-users" aria-hidden="true"></i> Manage User</a> 
-     
+        <a class="active" href="fac_classroom_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a href="fac_view_attendance.php"><i class="fa fa-users" aria-hidden="true"></i> Manage User</a>
+
         <a href="f_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -240,6 +248,8 @@ function myFunction() {
     x.className = "navbar";
   }
 }
+
+
 </script>
 <br>
 <div class="main">
@@ -254,45 +264,80 @@ function myFunction() {
     <th>Semester</th>
     <th>Roll No.</th>
     <th>Attendance</th>
+    <th>Increase</th>
+    <th>Decrease</th>
   </tr>
-  
-<?php
 
-$tId=$_SESSION['idf'];
+  <?php
+  if( isset( $_SESSION['idf'] ) ){
 
-  $result = mysqli_query($con,"SELECT login_student.program, login_student.branch, login_student.semester, rollno from coursedetails, login_student WHERE login_student.branch = coursedetails.branch AND login_student.program = coursedetails.program AND login_student.semester = coursedetails.semester AND coursedetails.tid='$tId' ORDER BY login_student.branch") or die('Error');
+                      $sql='SELECT a.program, a.branch, a.semester, a.rollno, a.attendno
+                              from attendance a, login_student l
+                          WHERE l.rollno = a.rollno
+                              AND l.branch = a.branch
+                              AND l.program = a.program
+                              AND l.semester = a.semester
+                              AND a.tid=?
+                          ORDER BY l.branch';
 
-while($row = mysqli_fetch_array($result)) {
-  // $id = $row['stu_id'];
-  // $name = $row['name'];
-  // $mob = $row['mob'];
-  // $rn = $row['rollno'];
-  // $att = $row['atten'];
-  // $email = $row['email'];
- 
-  // echo '<tr><td>'.$id.'</td><td>'.$name.'</td><td>'.$rn.'</td><td>'.$email.'</td><td>'.$mob.'</td><td>'.$att.'</td>
-  // <td><a title="Delete User" href="deluser.php?demail='.$email.' "><i>Delete User</i></a></td></tr>';
+                      $stmt=$con->prepare( $sql );
+                      $stmt->bind_param( 's', $_SESSION['idf'] );
 
-$program = $row['program'];
-$branch = $row['branch'];
-$semester = $row['semester'];
-$roll = $row['rollno'];
-$att = 0;
+                      $res=$stmt->execute();
+                      $stmt->bind_result( $program, $branch, $semester, $rollno, $attendno );
 
-echo '<tr><td>'.$program.'</td><td>'.$branch.'</td><td>'.$semester.'</td><td>'.$roll.'</td><td>'.$att.'</td></tr>';
-
-}
-echo '</table></div>';
-
-
-?>
+                      while( $stmt->fetch() ){
+                          printf(
+                              '<tr>
+                                  <td>%1$s</td>
+                                  <td>%2$s</td>
+                                  <td>%3$s</td>
+                                  <td>%4$s</td>
+                                  <td>%5$s</td>
+                                  <td><button data-task="increase" data-rollno="%4$s" data-attend="%5$s">+</button></td>
+                                  <td><button data-task="decrease" data-rollno="%4$s" data-attend="%5$s">-</button></td>
+                              </tr>',
+                              $program,
+                              $branch,
+                              $semester,
+                              $rollno,
+                              $attendno );
+                      }
+                  }
+              ?>
 </table>
 
 </div>
+<script>
+    document.querySelectorAll('td button').forEach( bttn=>{
+        bttn.addEventListener('click',e=>{
+
+            /* create an empty FormData object and add our own values */
+            let fd=new FormData();
+                fd.append('task',e.target.dataset.task);
+                fd.append('rollno',e.target.dataset.rollno);
+                fd.append('attend',e.target.dataset.attend);
+
+            /* send a POST request to the PHP endpoint that will perform the update ( same page here ) */
+            fetch( location.href, { method:'post',body:fd } )
+                .then( r=>r.text() )
+                .then( text=>{
+                    if(e.target.getAttribute('data-task')=="increase"){
+                        td=e.target.parentNode.previousElementSibling;
+                        td.textContent=parseInt( td.textContent ) + 1;
+                    }
+                    else if(e.target.getAttribute('data-task')=="decrease"){
+                        td=e.target.parentNode.previousElementSibling.previousElementSibling;
+                        td.textContent=parseInt( td.textContent ) - 1;
+                    }
+                });
+        });
+    })
+</script>
 <br>
 <br>
-</div> 
-    
+</div>
+
     <?php
 include('../footer.php');
 ?>

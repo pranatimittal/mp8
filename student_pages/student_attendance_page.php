@@ -1,55 +1,14 @@
-<!-- <head>
-  <script src='https://meet.jit.si/external_api.js'></script>
-</head>
-<body>
-
-<button id="start" type="button">Start</button>
-<div id="jitsi-container">
-</div>
-
-<script>
-var button = document.querySelector('#start');
-var container = document.querySelector('#jitsi-container');
-var api = null;
-
-button.addEventListener('click', () => {
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var stringLength = 30;
-
-    function pickRandom() {
-    return possible[Math.floor(Math.random() * possible.length)];
-    }
-
-var randomString = Array.apply(null, Array(stringLength)).map(pickRandom).join('');
-
-    var domain = "meet.jit.si";
-    var options = {
-        "roomName": randomString,
-        "parentNode": container,
-        "width": 600,
-        "height": 600,
-    };
-    api = new JitsiMeetExternalAPI(domain, options);
-});
-
-</script>
-</body>
-</html> -->
-
 <?php
 include('config.php');
 session_start();
 ?>
 
 <?php
-
 if($_SESSION['xy']=='')
 {
    echo "<script>window.location.href='student_login.php'</script>";
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +21,7 @@ if($_SESSION['xy']=='')
 /* Style the body */
 .content {
   flex: 1 0 auto;
-}  
+}
 body {
   font-family: Arial;
   /* margin: 0; */
@@ -73,9 +32,9 @@ body {
   position: relative;
   padding: 20px;
   background: white;
-  color: #21610B;  
+  color: #21610B;
   font-size: 15px;
-  
+
 }
 p{
 color:black;
@@ -98,7 +57,7 @@ font-size:25px;
   color:white;
    font-size:30px;
   }
-*/ 
+*/
 
  .main h1{
     font-family: "Times New Roman", Georgia, Serif;
@@ -106,7 +65,7 @@ font-size:25px;
     color:#5e0c17;
     text-align: center;
   }
-  
+
     .navbar {
   overflow: hidden;
   background-color:#555;
@@ -127,7 +86,7 @@ font-size:25px;
 }
 
 /*.dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 16px;
   border: none;
   outline: none;
   color: white;
@@ -170,7 +129,7 @@ font-size:25px;
 .manageuser{
             font-family: "Times New Roman", Times, serif;
       font-size: 20px;
-      
+
         }
     table {
   font-family: arial, sans-serif;
@@ -198,7 +157,7 @@ th {
   display: none;
 }
 @media (max-width: 576px) {
-  
+
   .header{
     font-size:8px;
   }
@@ -258,7 +217,7 @@ th {
   <img src="IGDTUW-logo.png" alt="logo" />
   <h1>INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN</h1>
   <p>(Established by Govt. of Delhi vide Act 9 of 2012)</p>
-</div>    
+</div>
 
 <div class="navbar" id="myTopnav">
         <a class="active" href="classroom_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
@@ -289,7 +248,7 @@ function myFunction() {
     <th>Subject Name</th>
     <th>Attendance</th>
   </tr>
-  
+
 <?php
 
 $sId=$_SESSION['email'];
@@ -309,10 +268,10 @@ while($row = mysqli_fetch_array($result)) {
     $a1 = $ro['subjcode'];
     $a2 = $ro['subjname'];
     $a3 = 0;
-    
+
       echo '<tr><td>'.$a1.'</td><td>'.$a2.'</td><td>'.$a3.'</td></tr>';
   }
- 
+
 }
 echo '</table></div>';
 
@@ -323,13 +282,10 @@ echo '</table></div>';
 </div>
 <br>
 <br>
-</div> 
-    
+</div>
+
     <?php
 include('../footer.php');
 ?>
 </body>
 </html>
-
-
-

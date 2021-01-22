@@ -20,10 +20,10 @@ $quid=0;
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
 document.onkeydown = function(e) {
-        if (e.ctrlKey && 
-            (e.keyCode === 67 || 
-             e.keyCode === 86 || 
-             e.keyCode === 85 || 
+        if (e.ctrlKey &&
+            (e.keyCode === 67 ||
+             e.keyCode === 86 ||
+             e.keyCode === 85 ||
              e.keyCode === 117)) {
             return false;
         } else {
@@ -46,7 +46,7 @@ return true;
 
     <style>
 * {
-  
+
   box-sizing: border-box;
 }
 
@@ -143,7 +143,7 @@ iframe {
 }
 
 .container-login100 {
-  width: 100%;  
+  width: 100%;
   min-height: 97vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -486,13 +486,13 @@ margin-top: 50px;
                 <br>
                 <div class="container-login100-form-btn">
                     <input type="submit" class="login100-form-btn" name ="sub" value="Login">
-                        
+
                 </div>
                 <span class="login100-form-title">
                    <h7> <a href="details.php"> Forgot your password?</a></h7><br>
                    <h7> <a href="register.php"> Click here to register!</a></h7>
                 </span>
-                
+
             </form>
 
 <?php
@@ -501,7 +501,7 @@ if(isset($_POST["sub"]))
 {
   $e= $_POST["user"];
   $p= $_POST["pwd"];
-    
+
      $_SESSION["xy"]=$e;
        $_SESSION["yz"]=$p;
     $query= "select * from login_student where email='$e' and password='$p'";
@@ -512,7 +512,7 @@ if(isset($_POST["sub"]))
       //session_start();
       $_SESSION['Email']=$e;
       $_SESSION['Password']=$p;
- 
+
       echo "<script>alert('login successfully')</script>";
           $_SESSION['email'] = $e;
           $_SESSION['client']= "student";
@@ -531,13 +531,6 @@ if(isset($_POST["sub"]))
         </div>
     </div>
 </div>
-
-<?php
-
-$query1= "UPDATE visitor SET counter= counter + 1 WHERE id =1";
-$row= mysqli_query($con,$query1);
-
-?>
 
 </body>
 </html>

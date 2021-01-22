@@ -2,12 +2,18 @@
 include('config.php');
 session_start();
 ?>
+
+
 <?php
+
 if($_SESSION['xy']=='')
 {
    echo "<script>window.location.href='faculty_login.php'</script>";
 }
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,65 +30,105 @@ body {
   padding: 20px;
   background: white;
   color: #21610B;
-  font-size: 15px;}.header p{
+  font-size: 15px;
+
+}
+
+.header p{
 color:black;
 font-size:25px;
-} .header img {
+}
+
+ .header img {
   float: left;
   width: 150px;
   height: 120px;
   background: #555;
   margin-right:15px;
-}.navbar {
+}
+
+.navbar {
   overflow: hidden;
   background-color:#555;
-}.navbar a {
+}
+
+.navbar a {
   float: left;
   font-size: 16px;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}.navbar a:hover, .dropdown:hover .dropbtn {
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
   background-color: #4CAF50;
-}.main h1{
-    font-family: "Times New Roman", Georgia, Serif;    font-size: 30px;
+}
+
+
+
+.main h1{
+    font-family: "Times New Roman", Georgia, Serif;
+
+    font-size: 30px;
     /* color:#5e0c17; */
     color: black;
     text-align: center;
   }
   .right {
     text-align: right;
-    float: right;}.btn-group button {
-  background-color: #4CAF50;   border: 1px solid green; /* Green border */
+    float: right;
+
+}
+
+.btn-group button {
+  background-color: #4CAF50;
+
+  border: 1px solid green; /* Green border */
   color: white; /* White text */
   padding: 15px 20px;
   cursor: pointer; /* Pointer/hand icon */
   /* float: left;  */
-  /* margin-left: 5px; */
+/*  margin-left: 5px;*/
   width: 300px;
   font-size: 16px;
   border-radius:12px;
-}/* Clear floats (clearfix hack) */
+}
+
+/* Clear floats (clearfix hack) */
 .btn-group:after {
   content: "";
   clear: both;
   display: table;
-}.btn-group button:not(:last-child) {
+}
+
+.btn-group button:not(:last-child) {
   border-right: none; /* Prevent double borders */
-}/* Add a background color on hover */
+}
+
+/* Add a background color on hover */
 .btn-group button:hover {
-  background-color: #3e8e41;}
-/* .wrapper {
+  background-color: #3e8e41;
+
+}
+.wrapper {
     text-align: center;
-} */
+}
 .flip-card {
   background-color: transparent;
   width: 300px;
   height: 200px;
   /* perspective: 1000px; */
-  margin-left: 70px;
-}.flip-card-inner {
+}
+
+.btn-group {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  /* perspective: 1000px; */
+}
+
+.flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -90,25 +136,41 @@ font-size:25px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}.flip-card:hover .flip-card-inner {
+}
+
+.flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-}.flip-card-front, .flip-card-back {
+}
+
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   border-radius:10px;
-    -moz-border-radius:10px;}.flip-card-front {
+    -moz-border-radius:10px;
+
+}
+
+.flip-card-front {
   /* background-color: #bbb; */
-  color: black;}.flip-card-back {
+  color: black;
+
+}
+
+.flip-card-back {
   background-color: rgb(211, 207, 207);
   color: black;
   transform: rotateY(180deg);
   text-align: center;
-  padding: 5px 10px;}
+  padding: 5px 10px;
+
+}
 .flip-card-back h2{
     text-align: center;
-}* {
+}
+
+* {
   box-sizing: border-box;
 }
 .flip-card-back p{
@@ -116,10 +178,14 @@ font-size:25px;
 }
 .column {
   float: left;
-  width: 33.33%;
+  width: 25%;
   padding: 5px;
-}/* Clearfix (clear floats) */
-.row::after {  content: "";
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+
+  content: "";
   clear: both;
   display: table;
 }
@@ -135,7 +201,9 @@ img[src="teaching.png"]{
    margin:auto;
  }
   .column{
-   width:100%; }
+   width:100%;
+
+ }
  .flip-card{
   margin:auto;
   width: 200px;
@@ -176,7 +244,9 @@ margin-left:20px;
   text-align: center;
   padding: 8px 10px;
   text-decoration: none;
-}.Modal-content {
+}
+
+.Modal-content {
    padding: 15px;
   border-radius: 4px;
   max-width: 280px;
@@ -184,7 +254,12 @@ margin-left:20px;
 }
 li{
   font-size:12px;
-}}</style>
+}
+
+}
+
+
+</style>
 <link rel = "icon" type = "image/png" href = "IGDTUW-Logo.png">
 <title>Faculty Module Page</title>
 </head>
@@ -204,96 +279,100 @@ li{
       </div>
       <br>
       <a name="top"></a>
-    <div class="content">      <div class="main">
+    <div class="content">
+
+      <div class="main">
         <h1>FACULTY MODULES</h1>
         </div>
          <br>
         <br>
-        <div class="row">
-            <div class="column">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="profile1.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
-            </div>
-            <div class="flip-card-back">
-              <h2>VIEW PROFILE</h2>
-              <p>Your profile details will be shown here.</p>
-              <p>Click on view profile button below to  view all your profile details.</p>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-            <div class="btn-group">
-              <button onclick="location.href = 'fac_profile.php';">VIEW PROFILE</button>
-              </div>
-              </div>
-        </div>
 
-        <div class="column">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="feedback_module.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
-              </div>
-              <div class="flip-card-back">
-                <h2>FEEDBACK MODULE</h2>
-              <p>You can view your feedback with the help of this module.</p>
-              <p>Click on feedback module button below to explore all options of feedback module.</p>
-              </div>
-            </div>
-          </div>
-          <div class="wrapper">
-            <div class="btn-group">
-                <button onclick="location.href = 'fac_fb_home.php';">FEEDBACK MODULE</button>
-              </div>
-              </div>
-        </div>
 
-        <div class="column">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="teaching.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
-              </div>
-              <div class="flip-card-back">
-                <h2>CLASSROOM MODULE</h2>
-              <p>You can initiate lectures, view discussion forum and maintain attendance with this module.</p>
-              <p>Click on Classroom module button below to explore all options of Classroom module.</p>
-              </div>
-            </div>
-          </div>
-          <div class="wrapper">
-            <div class="btn-group">
-                <button onclick="location.href = 'fac_classroom_page.php';">CLASSROOM MODULE</button>
-              </div>
-              </div>
-        </div>
+<div class="row">
+    <div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="profile1.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+    </div>
+    <div class="flip-card-back">
+      <h2>VIEW PROFILE</h2>
+      <p>Your profile details will be shown here.</p>
+      <p>Click on view profile button below to  view all your profile details.</p>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+    <div class="btn-group">
+      <button onclick="location.href = 'fac_profile.php';">VIEW PROFILE</button>
+      </div>
+      </div>
+</div>
 
-        <div class="column">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="learning_section.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
-              </div>
-              <div class="flip-card-back">
-                <h2>ASSESSMENT MODULE</h2>
-              <p>You can upload learning material,assignments as well as upload test with the help of this module.</p>
-            <p>Click on teaching module button below to explore all options of learning module.</p>
-            </div>
-            </div>
-          </div>
-          <div class="wrapper">
-            <div class="btn-group">
-                <button onclick="location.href = 'fac_teaching_home.php';">ASSESSMENT MODULE</button>
-              </div>
-              </div>
-            </div>
+<div class="column">
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="feedback_module.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h2>FEEDBACK MODULE</h2>
+      <p>You can view your feedback with the help of this module.</p>
+      <p>Click on feedback module button below to explore all options of feedback module.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="btn-group">
+        <button onclick="location.href = 'fac_fb_home.php';">FEEDBACK MODULE</button>
+      </div>
+      </div>
+</div>
 
-            </div>
-            </div> 
+<div class="column">
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="teaching.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h2>CLASSROOM MODULE</h2>
+      <p>You can initiate lectures, view discussion forum and maintain attendance with this module.</p>
+      <p>Click on Classroom module button below to explore all options of Classroom module.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="btn-group">
+        <button onclick="location.href = 'fac_classroom_page.php';">CLASSROOM MODULE</button>
+      </div>
+      </div>
+</div>
 
-<?php
+<div class="column">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="learning_section.png" alt="feedback" style="width:150px;height:150px;margin-top: 40px;">
+      </div>
+      <div class="flip-card-back">
+        <h2>ASSESSMENT MODULE</h2>
+      <p>You can upload learning material,assignments as well as upload test with the help of this module.</p>
+    <p>Click on teaching module button below to explore all options of learning module.</p>
+    </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="btn-group">
+        <button onclick="location.href = 'fac_teaching_home.php';">ASSESSMENT MODULE</button>
+      </div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+    <?php
 include('../footer.php');
 ?>
 </body>
